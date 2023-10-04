@@ -2,15 +2,13 @@
 
 import sys, os
 
-def getInput(player,board):
+def get_input(player,board):
 
-
-	#A-C = 65-67, a-c = 97-99
-	
-	# make sure input is only two characters 
-	# make sure first is either a upper-case or lower-case letter A-C
-	# make sure second is number between 1 and 3
-	#convert these into indices of where new move will be, use dict for A-C
+	"""
+	playable tic-tac-toe game
+	run with python3 TicTacToe.py
+	I was writing a lot of C++/C code before this, so many of the var names are camal case ...
+	"""
 	invalidInput = True
 	newMoveRow = -999
 	newMoveColumn = 999
@@ -38,7 +36,7 @@ def getInput(player,board):
 	newMoveColumn = int(move[1]) -1 
 
 	return newMoveRow,newMoveColumn
-def drawBoard(board,newMoveRow,newMoveColumn,player):
+def draw_board(board,newMoveRow,newMoveColumn,player):
 
 
 	# change new move right here so the board is updated
@@ -57,7 +55,7 @@ def drawBoard(board,newMoveRow,newMoveColumn,player):
 	print("C   | %s | %s | %s |"%(board[2][0], board[2][1],board[2][2]))
 	print("    _____________")
 
-def CheckisDone(board):
+def check_is_done(board):
 	#check horizontally, check vertically, check diagonals
 	
 	for iii in range(0,3):
@@ -81,7 +79,7 @@ def CheckisDone(board):
 	if not any(' ' in sublist for sublist in board):
 		return True, "nobody - all squares full, game ends as a draw"
 	return False, ""
-def playGame():
+def play_game():
 	isDone = False
 	board = [     [' ', ' ', ' '],  
 			      [' ', ' ', ' '],
@@ -92,13 +90,13 @@ def playGame():
 		player = counter%2   # 0 == player 1 (Xs), 1 == player 2 (Os)
 		newMoveRow,newMoveColumn = getInput(player,board)
 		drawBoard(board,newMoveRow,newMoveColumn,player)
-		isDone, winner[0] = CheckisDone(board)
+		isDone, winner[0] = check_is_done(board)
 		counter+=1 
 	print("Winner is %s."%winner[0])
 	print("Thanks for playing!")
 
 def main(args):
-	playGame()
+	play_game()
 
 
 if __name__ == "__main__":

@@ -1,26 +1,8 @@
 
 import random 
 """
-Milestone Project 2 - Blackjack Game
-
-In this milestone project you will be creating a Complete BlackJack Card Game in Python.
-
-Here are the requirements:
-
-    You need to create a simple text-based BlackJack game
-    The game needs to have one player versus an automated dealer_one.
-    The player can stand or hit.
-    The player must be able to pick their betting amount.
-    You need to keep track of the player's total money.
-    You need to alert the player of wins, losses, or busts, etc...
-
-And most importantly:
-
-    You must use OOP and classes in some portion of your game. You can not just use functions in your game. Use classes to help you define the Deck and the Player's hand. There are many right ways to do this, so explore it well!
-
-Feel free to expand this game. Try including multiple players. Try adding in Double-Down and card splits! Remember to you are free to use any resources you want and as always:
-
-
+playable blackjack game (I don't know how to play blackjack exactly, so this is to the best of my understanding )
+run with python3 blackjack.py
 """
 
 values  = {"two":2,"three":3,"four":4,"five":5,"six":6,"seven":7,"eight":8,"nine":9,"ten":10,"jack":11,"queen":12,"king":13,"ace":14}
@@ -117,7 +99,7 @@ class dealer:
 
 def play_game():
 	game_is_valid = True
-	player_one = player("Pragya", 500)
+	player_one = player("Player 1", 500)
 	dealer_one = dealer("Mr. Dealer")
 	while game_is_valid:
 		print('------------------------------------')
